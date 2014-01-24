@@ -1,0 +1,26 @@
+[
+	{
+		"caption": "Google: Search Selection",
+		"command": "google_search_selection"
+	},
+	{
+		"caption": "Google: Search from Input",
+		"command": "google_search_from_input"
+	},
+	{
+		"caption": "Stackoverflow: Search Selection",
+		"command": "stackoverflow_search_selection"
+	},
+	{
+		"caption": "Stackoverflow: Search from Input",
+		"command": "stackoverflow_search_from_input"
+	},
+	{
+		"caption": "WordPress Codex: Search Selection",
+		"command": "wordpress_search_selection"
+	},
+	{
+		"caption": "WordPress Codex: Search from Input",
+		"command": "wordpress_search_from_input"
+	}
+]

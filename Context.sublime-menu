@@ -1,0 +1,14 @@
+[
+	{
+		"command": "google_search_selection",
+		"caption": "Search: Google"
+	},
+	{
+		"command": "stackoverflow_search_selection",
+		"caption": "Search: Stack Overflow"
+	},
+	{
+		"command": "wordpress_search_selection",
+		"caption": "Search: WordPress Codex"
+	}
+]
