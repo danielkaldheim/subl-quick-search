@@ -1,5 +1,13 @@
 # Written by Magnus Hauge Bakke (mhbakke@gmail.com)
 
+# available commands
+#   google_search_selection
+#   google_search_from_input
+#   stackoverflow_search_selection
+#   stackoverflow_search_from_input
+#   wordpress_search_selection
+#   wordpress_search_from_input
+
 import sublime
 import sublime_plugin
 
