@@ -3,6 +3,8 @@
 # available commands
 #   google_search_selection
 #   google_search_from_input
+#   google_translate_en_no_selection
+#   google_translate_en_no_from_input
 #   stackoverflow_search_selection
 #   stackoverflow_search_from_input
 #   wordpress_search_selection
@@ -16,6 +18,10 @@ import webbrowser
 
 def searchForGoogle(text):
 	url = 'https://www.google.no/#q=' + text.replace(' ','%20')
+	webbrowser.open_new_tab(url)
+	
+def translateGoogleEnNo(text):
+	url = 'http://translate.google.no/#en/no/' + text.replace(' ','%20')
 	webbrowser.open_new_tab(url)
 
 def searchForStackoverflow(text):
@@ -45,6 +51,32 @@ class GoogleSearchFromInputCommand(sublime_plugin.WindowCommand):
 		
 	def on_done(self, input):
 		searchForGoogle(input)
+
+	def on_change(self, input):
+		pass
+
+	def on_cancel(self):
+		pass
+		
+class GoogleTranslateEnNoSelectionCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		for selection in self.view.sel():
+			
+			if selection.empty():
+				text = self.view.word(selection)
+
+			text = self.view.substr(selection)
+						
+			translateGoogleEnNo(text)
+
+class GoogleTranslateEnNoFromInputCommand(sublime_plugin.WindowCommand):
+	def run(self):
+		
+		self.window.show_input_panel('Google Translate from En to No', '',
+			self.on_done, self.on_change, self.on_cancel)
+		
+	def on_done(self, input):
+		translateGoogleEnNo(input)
 
 	def on_change(self, input):
 		pass

@@ -1,5 +1,9 @@
 [
 	{
+		"command": "google_translate_en_no_selection",
+		"caption": "Google Translate En to No"
+	},
+	{
 		"command": "google_search_selection",
 		"caption": "Search: Google"
 	},
