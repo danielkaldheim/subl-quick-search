@@ -1,13 +1,5 @@
 [
 	{
-		"caption": "Google: Translate Selection (En to No)",
-		"command": "google_translate_en_no_selection"
-	},
-	{
-		"caption": "Google: Translate (En to No) from Input",
-		"command": "google_translate_en_no_from_input"
-	},
-	{
 		"caption": "Google: Search Selection",
 		"command": "google_search_selection"
 	},
@@ -30,5 +22,13 @@
 	{
 		"caption": "WordPress Codex: Search from Input",
 		"command": "wordpress_search_from_input"
+	},
+	{
+		"caption": "Can I use: Search Selection",
+		"command": "caniuse_search_selection"
+	},
+	{
+		"caption": "Can I use: Search from Input",
+		"command": "caniuse_search_from_input"
 	}
 ]
