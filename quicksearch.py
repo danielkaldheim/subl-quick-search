@@ -32,23 +32,27 @@ def searchForCaniuse(text):
 	url = 'http://caniuse.com/#search=' + text.replace(' ','%20')
 	webbrowser.open_new_tab(url)
 
+def searchForPHPnet(text):
+	url = 'http://php.net/manual/en/function.' + text.replace(' ','%20').replace('_', '-') + '.php'
+	webbrowser.open_new_tab(url)
+
 class GoogleSearchSelectionCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		for selection in self.view.sel():
-			
+
 			if selection.empty():
 				text = self.view.word(selection)
 
 			text = self.view.substr(selection)
-						
+
 			searchForGoogle(text)
 
 class GoogleSearchFromInputCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		
+
 		self.window.show_input_panel('Search Google for', '',
 			self.on_done, self.on_change, self.on_cancel)
-		
+
 	def on_done(self, input):
 		searchForGoogle(input)
 
@@ -61,20 +65,20 @@ class GoogleSearchFromInputCommand(sublime_plugin.WindowCommand):
 class StackoverflowSearchSelectionCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		for selection in self.view.sel():
-			
+
 			if selection.empty():
 				text = self.view.word(selection)
 
 			text = self.view.substr(selection)
-						
+
 			searchForStackoverflow(text)
 
 class StackoverflowSearchFromInputCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		
+
 		self.window.show_input_panel('Search Stack Overflow for', '',
 			self.on_done, self.on_change, self.on_cancel)
-		
+
 	def on_done(self, input):
 		searchForStackoverflow(input)
 
@@ -87,20 +91,20 @@ class StackoverflowSearchFromInputCommand(sublime_plugin.WindowCommand):
 class WordpressSearchSelectionCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		for selection in self.view.sel():
-			
+
 			if selection.empty():
 				text = self.view.word(selection)
 
 			text = self.view.substr(selection)
-						
+
 			searchForWordpress(text)
 
 class WordpressSearchFromInputCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		
+
 		self.window.show_input_panel('Search WordPress Codex for', '',
 			self.on_done, self.on_change, self.on_cancel)
-		
+
 	def on_done(self, input):
 		searchForWordpress(input)
 
@@ -113,22 +117,48 @@ class WordpressSearchFromInputCommand(sublime_plugin.WindowCommand):
 class CaniuseSearchSelectionCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		for selection in self.view.sel():
-			
+
 			if selection.empty():
 				text = self.view.word(selection)
 
 			text = self.view.substr(selection)
-						
+
 			searchForCaniuse(text)
 
 class CaniuseSearchFromInputCommand(sublime_plugin.WindowCommand):
 	def run(self):
-		
+
 		self.window.show_input_panel('Search Can I Use for', '',
 			self.on_done, self.on_change, self.on_cancel)
-		
+
 	def on_done(self, input):
 		searchForCaniuse(input)
+
+	def on_change(self, input):
+		pass
+
+	def on_cancel(self):
+		pass
+
+class PhpnetSearchSelectionCommand(sublime_plugin.TextCommand):
+	def run(self, edit):
+		for selection in self.view.sel():
+
+			if selection.empty():
+				text = self.view.word(selection)
+
+			text = self.view.substr(selection)
+
+			searchForPHPnet(text)
+
+class PhpnetSearchFromInputCommand(sublime_plugin.WindowCommand):
+	def run(self):
+
+		self.window.show_input_panel('Search php.net for', '',
+			self.on_done, self.on_change, self.on_cancel)
+
+	def on_done(self, input):
+		searchForPHPnet(input)
 
 	def on_change(self, input):
 		pass

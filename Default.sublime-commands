@@ -30,5 +30,13 @@
 	{
 		"caption": "Can I use: Search from Input",
 		"command": "caniuse_search_from_input"
+	},
+	{
+		"caption": "PHP.net: Search Selection",
+		"command": "phpnet_search_selection"
+	},
+	{
+		"caption": "PHP.net: Search from Input",
+		"command": "phpnet_search_from_input"
 	}
 ]

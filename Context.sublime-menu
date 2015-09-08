@@ -14,5 +14,9 @@
 	{
 		"command": "caniuse_search_selection",
 		"caption": "Search: Can I Use"
+	},
+	{
+		"command": "phpnet_search_selection",
+		"caption": "Search: PHP.net"
 	}
 ]
